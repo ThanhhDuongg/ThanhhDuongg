@@ -1,0 +1,100 @@
+<svg width="1000" height="230" viewBox="0 0 1000 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="1000" y2="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B1020"/>
+      <stop offset="1" stop-color="#121A33"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1000" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="0.5" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#F472B6"/>
+    </linearGradient>
+    <filter id="pglow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .h   { font: 700 16px 'Consolas','Courier New',monospace; fill: #E9E4FF; letter-spacing: 1px; }
+      .lbl { font: 600 14px 'Consolas','Courier New',monospace; letter-spacing: 1px; }
+      .sm  { font: 500 11px 'Consolas','Courier New',monospace; fill: #7C8DB5; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="230" rx="16" fill="url(#pbg)" stroke="#26304D"/>
+  <text x="36" y="44" class="h">$ how_i_work --pipeline</text>
+  <rect x="262" y="31" width="9" height="15" fill="#22D3EE"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+
+  <!-- rail -->
+  <line x1="110" y1="130" x2="890" y2="130" stroke="#26304D" stroke-width="4" stroke-linecap="round"/>
+  <line x1="110" y1="130" x2="890" y2="130" stroke="url(#line)" stroke-width="4" stroke-linecap="round" stroke-dasharray="40 740">
+    <animate attributeName="stroke-dashoffset" values="780;0" dur="4s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- travelling pulse -->
+  <circle r="7" fill="#22D3EE" filter="url(#pglow)">
+    <animateMotion dur="4s" repeatCount="indefinite" path="M110 130 H890"/>
+    <animate attributeName="fill" values="#8B5CF6;#22D3EE;#F472B6" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- node 1: CODE -->
+  <g>
+    <circle cx="110" cy="130" r="26" fill="#0B1020" stroke="#8B5CF6" stroke-width="2.5"/>
+    <circle cx="110" cy="130" r="26" fill="none" stroke="#8B5CF6" stroke-width="2" opacity="0.6">
+      <animate attributeName="r" values="26;36" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="110" y="136" text-anchor="middle" class="lbl" fill="#C4B5FD">&lt;/&gt;</text>
+    <text x="110" y="182" text-anchor="middle" class="lbl" fill="#C4B5FD">CODE</text>
+    <text x="110" y="200" text-anchor="middle" class="sm">clean &amp; readable</text>
+  </g>
+
+  <!-- node 2: TEST (rotating gear) -->
+  <g>
+    <circle cx="370" cy="130" r="26" fill="#0B1020" stroke="#22D3EE" stroke-width="2.5"/>
+    <g transform="translate(370 130)">
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="5s" repeatCount="indefinite"/>
+        <path fill="#67E8F9" d="M0-13 L2.5-9.5 A10 10 0 0 1 6.5-7.5 L10.5-8.5 L12.5-4.5 L9.5-2 A10 10 0 0 1 9.5 2 L12.5 4.5 L10.5 8.5 L6.5 7.5 A10 10 0 0 1 2.5 9.5 L0 13 L-2.5 9.5 A10 10 0 0 1 -6.5 7.5 L-10.5 8.5 L-12.5 4.5 L-9.5 2 A10 10 0 0 1 -9.5-2 L-12.5-4.5 L-10.5-8.5 L-6.5-7.5 A10 10 0 0 1 -2.5-9.5 Z"/>
+        <circle r="4.5" fill="#0B1020"/>
+      </g>
+    </g>
+    <text x="370" y="182" text-anchor="middle" class="lbl" fill="#67E8F9">TEST</text>
+    <text x="370" y="200" text-anchor="middle" class="sm">unit · fuzz · regression</text>
+  </g>
+
+  <!-- node 3: REVIEW (scanning eye) -->
+  <g>
+    <circle cx="630" cy="130" r="26" fill="#0B1020" stroke="#A78BFA" stroke-width="2.5"/>
+    <path d="M615 130 Q630 116 645 130 Q630 144 615 130 Z" fill="none" stroke="#C4B5FD" stroke-width="2"/>
+    <circle cx="630" cy="130" r="5" fill="#C4B5FD">
+      <animate attributeName="cx" values="623;637;623" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="630" y="182" text-anchor="middle" class="lbl" fill="#C4B5FD">REVIEW</text>
+    <text x="630" y="200" text-anchor="middle" class="sm">refactor &amp; document</text>
+  </g>
+
+  <!-- node 4: SHIP (rocket + check) -->
+  <g>
+    <circle cx="890" cy="130" r="26" fill="#0B1020" stroke="#F472B6" stroke-width="2.5"/>
+    <g transform="translate(890 132)">
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0 2; 0 -3; 0 2" dur="1.6s" repeatCount="indefinite"/>
+        <path d="M0-12 C5-6 5 2 3 7 H-3 C-5 2 -5-6 0-12 Z" fill="#FBCFE8"/>
+        <circle cy="-3" r="2.4" fill="#0B1020"/>
+        <path d="M-3 7 L-7 12 L-2 10 Z M3 7 L7 12 L2 10 Z" fill="#F472B6"/>
+        <path d="M-1.6 8 H1.6 L0 14 Z" fill="#F59E0B">
+          <animate attributeName="opacity" values="1;0.3;1" dur="0.5s" repeatCount="indefinite"/>
+        </path>
+      </g>
+    </g>
+    <text x="890" y="182" text-anchor="middle" class="lbl" fill="#FBCFE8">SHIP</text>
+    <text x="890" y="200" text-anchor="middle" class="sm">small, often, better</text>
+  </g>
+
+  <!-- status checks popping above rail -->
+  <g font-family="Consolas, monospace" font-size="12" fill="#34D399">
+    <text x="225" y="105" text-anchor="middle" opacity="0">✓ build passed<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.7;1" dur="4s" repeatCount="indefinite"/></text>
+    <text x="500" y="105" text-anchor="middle" opacity="0">✓ 124 tests green<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3;0.45;0.8;1" dur="4s" repeatCount="indefinite"/></text>
+    <text x="760" y="105" text-anchor="middle" opacity="0">✓ approved<animate attributeName="opacity" values="0;0;0;1;1" keyTimes="0;0.5;0.65;0.8;1" dur="4s" repeatCount="indefinite"/></text>
+  </g>
+</svg>

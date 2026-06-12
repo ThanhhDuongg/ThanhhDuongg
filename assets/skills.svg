@@ -1,0 +1,83 @@
+<svg width="1000" height="250" viewBox="0 0 1000 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sbg" x1="0" y1="0" x2="1000" y2="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B1020"/>
+      <stop offset="1" stop-color="#121A33"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="220" x2="0" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="0.6" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#67E8F9"/>
+    </linearGradient>
+    <style>
+      .t  { font: 700 16px 'Consolas','Courier New',monospace; fill: #E9E4FF; letter-spacing: 1px; }
+      .lb { font: 600 13px 'Consolas','Courier New',monospace; fill: #9BB4D6; }
+      .pc { font: 700 12px 'Consolas','Courier New',monospace; fill: #67E8F9; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="250" rx="16" fill="url(#sbg)" stroke="#26304D"/>
+  <text x="36" y="42" class="t">$ skills --equalizer</text>
+  <rect x="232" y="29" width="9" height="15" fill="#F472B6"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+
+  <line x1="60" y1="195" x2="940" y2="195" stroke="#26304D" stroke-width="2"/>
+
+  <!-- bars: each animates around its true level -->
+  <g>
+    <rect x="80"  width="56" rx="6" fill="url(#bar)" y="85" height="110">
+      <animate attributeName="y" values="85;95;82;85" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="110;100;113;110" dur="2.6s" repeatCount="indefinite"/>
+    </rect>
+    <text x="108" y="215" text-anchor="middle" class="lb">Java</text>
+    <text x="108" y="76" text-anchor="middle" class="pc">OOP</text>
+
+    <rect x="200" width="56" rx="6" fill="url(#bar)" y="100" height="95">
+      <animate attributeName="y" values="100;92;106;100" dur="3.1s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="95;103;89;95" dur="3.1s" repeatCount="indefinite"/>
+    </rect>
+    <text x="228" y="215" text-anchor="middle" class="lb">Spring</text>
+    <text x="228" y="84" text-anchor="middle" class="pc">web</text>
+
+    <rect x="320" width="56" rx="6" fill="url(#bar)" y="92" height="103">
+      <animate attributeName="y" values="92;102;88;92" dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="103;93;107;103" dur="2.4s" repeatCount="indefinite"/>
+    </rect>
+    <text x="348" y="215" text-anchor="middle" class="lb">MySQL</text>
+    <text x="348" y="82" text-anchor="middle" class="pc">data</text>
+
+    <rect x="440" width="56" rx="6" fill="url(#bar)" y="88" height="107">
+      <animate attributeName="y" values="88;97;84;88" dur="2.9s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="107;98;111;107" dur="2.9s" repeatCount="indefinite"/>
+    </rect>
+    <text x="468" y="215" text-anchor="middle" class="lb">Python</text>
+    <text x="468" y="78" text-anchor="middle" class="pc">pandas</text>
+
+    <rect x="560" width="56" rx="6" fill="url(#bar)" y="105" height="90">
+      <animate attributeName="y" values="105;96;110;105" dur="2.7s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="90;99;85;90" dur="2.7s" repeatCount="indefinite"/>
+    </rect>
+    <text x="588" y="215" text-anchor="middle" class="lb">HTML/CSS/JS</text>
+    <text x="588" y="89" text-anchor="middle" class="pc">ui</text>
+
+    <rect x="680" width="56" rx="6" fill="url(#bar)" y="98" height="97">
+      <animate attributeName="y" values="98;108;94;98" dur="3.3s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="97;87;101;97" dur="3.3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="708" y="215" text-anchor="middle" class="lb">Testing/QA</text>
+    <text x="708" y="86" text-anchor="middle" class="pc">fuzz</text>
+
+    <rect x="800" width="56" rx="6" fill="url(#bar)" y="90" height="105">
+      <animate attributeName="y" values="90;99;86;90" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="105;96;109;105" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="828" y="215" text-anchor="middle" class="lb">Git/GitHub</text>
+    <text x="828" y="80" text-anchor="middle" class="pc">flow</text>
+  </g>
+
+  <!-- glow dots riding bar tops -->
+  <g fill="#F472B6">
+    <circle cx="108" cy="83" r="3"><animate attributeName="cy" values="83;93;80;83" dur="2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="468" cy="86" r="3"><animate attributeName="cy" values="86;95;82;86" dur="2.9s" repeatCount="indefinite"/></circle>
+    <circle cx="828" cy="88" r="3"><animate attributeName="cy" values="88;97;84;88" dur="2.5s" repeatCount="indefinite"/></circle>
+  </g>
+</svg>
